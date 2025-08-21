@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+
+    <title>
+        vector art
+    </title>
+    <link rel="icon" type="image/x-icon" href="favicon-goes-here.png">
+    <!-- the icon that shows up in the address bar -->
+
+    <!-- HTML Meta Tags-->
+    <meta property="og:type" content="website" />
+    <meta name="description" content="describe your site for search engines + social media links!" />
+    <meta property="og:image" content="put a link to your preview image for social media here.jpg">
+    <meta property="og:image:type" content="image/jpg">
+</head>
+
+<body>
+    <header>
+        <h1><a class="h1" href="index.html">
+            sam villagonzalo
+            </a>
+        </h1>
+        <nav>
+            <a href="vector-art.html">
+                <u>vector art</u>
+            </a>
+            <a href="graphic-design.html">
+                graphic design
+            </a>
+            <a href="illustration.html">
+                illustration
+            </a>
+        </nav>
+    </header>
+    <main>
+        <div id="gallery" class="columns">
+            <img src="monograms vector vertical.png"> <!--monograms-->
+            <img src="tattoo design vector.png"> <!--sun design-->
+            <img src="the thing vector.png"> <!--the thing-->
+            <img src="logo vector 2 vertical.png"> <!--sandoval team-->
+            <img src="tattoo design vector 2.png"> <!--heart design-->
+            <img src="logos vector.png"> <!--amazon award logos-->
+            <img src="cork queen vector vertical.png"> <!--cork queen-->
+            <img src="tumbler engraving vector.png"> <!--red tumbler-->
+            <!--<img src="cares counselor squad vector.png">-->
+            
+        </div>
+
+        <div id="lightbox" popover></div>
+        <!-- don't get rid of this div, even though it looks empty - this is what makes your image lightbox work! -->
+
+    </main>
+    <footer>
+    </footer>
+
+</body>
+
+<!-- this bit is what makes the image lightbox work! -->
+<script>
+    const popover = document.getElementById("lightbox");
+
+    $('#gallery img').click(function (e) {
+        var image_src = $(this).attr("src");
+        $(this).attr('popovertarget', 'lightbox');
+        $('#lightbox').html('<img src="' + image_src + '" />');
+        popover.showPopover();
+        $('#lightbox').append('<button popovertarget="lightbox" popovertargetaction="hide">x</button>');
+    });
+</script>
+
+</html>

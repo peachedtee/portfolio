@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+
+    <title>
+        graphic design
+    </title>
+    <link rel="icon" type="image/x-icon" href="favicon-goes-here.png">
+    <!-- the icon that shows up in the address bar -->
+
+    <!-- HTML Meta Tags-->
+    <meta property="og:type" content="website" />
+    <meta name="description" content="describe your site for search engines + social media links!" />
+    <meta property="og:image" content="put a link to your preview image for social media here.jpg">
+    <meta property="og:image:type" content="image/jpg">
+</head>
+
+<body>
+    <header>
+        <h1><a class="h1" href="index.html">
+            sam villagonzalo
+            </a>
+        </h1>
+        <nav>
+            <a href="vector-art.html">
+                vector art
+            </a>
+            <a href="graphic-design.html">
+                <u>graphic design</u>
+            </a>
+            <a href="illustration.html">
+                illustration
+            </a>
+        </nav>
+    </header>
+    <main>
+        <div id="gallery" class="columns">
+            <img src="tumblr_4aea78f186673ccc6ca9450b991f2d3f_77df0d21_1280.png"> <!--handmaiden bells-->
+            <img src="tumblr_a7396839de3d071c67287351c5aa5728_77dc38a5_2048.jpg"> <!--sesoenon joke-->
+            <img src="tumblr_c769f10ec2b79910ea5429eb244dbbbb_aff1403c_1280.png"> <!--handmaiden hideko-->
+            <img src="tumblr_5666d810ee7f52243c3cc13c3a2ff3fa_3f1a3a99_2048.jpg"> <!--hwang soyoon-->
+            <img src="kyashana lip cropped.png"> <!--kyashana lip-->
+            <img src="tumblr_559fb314ec39bfd82f8cbd8232804e7e_99b31ef4_1280.png"> <!--handmaiden sookee-->
+            <img src="tumblr_f45fa155d08f2d4c8705ae03010df6dd_6ba489ea_2048.jpg"> <!--sesoneon go back-->
+            <img src="tumblr_2df20f3d5a5ed470a60a452c7a987ca1_610bbc51_2048.jpg"> <!--shroom game art-->
+            
+           <!-- <img src="images/300x300.png"> -->
+        </div>
+
+        <div id="lightbox" popover></div>
+        <!-- don't get rid of this div, even though it looks empty - this is what makes your image lightbox work! -->
+
+    </main>
+    <footer>
+    </footer>
+
+</body>
+
+<!-- this bit is what makes the image lightbox work! -->
+<script>
+    const popover = document.getElementById("lightbox");
+
+    $('#gallery img').click(function (e) {
+        var image_src = $(this).attr("src");
+        $(this).attr('popovertarget', 'lightbox');
+        $('#lightbox').html('<img src="' + image_src + '" />');
+        popover.showPopover();
+        $('#lightbox').append('<button popovertarget="lightbox" popovertargetaction="hide">x</button>');
+    });
+</script>
+
+</html>
